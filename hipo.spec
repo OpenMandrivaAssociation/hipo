@@ -1,11 +1,12 @@
 %define name hipo
-%define version 0.4
+%define version 0.5
 %define release %mkrel 1
 Summary: GTK interface to iPod
 Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: http://download.gnome.org/sources/Hipo/%{name}-%{version}.tar.bz2
+Patch: hipo-0.5-desktopentry.patch
 License: GPL
 Group: Sound
 Url: http://www.gnome.org/~pvillavi/hipo/
@@ -22,6 +23,7 @@ Hipo is an application that allows you to manage the data of your iPod.
 
 %prep
 %setup -q -n %name-%version
+%patch -p1
 
 %build
 ./configure --prefix=%_prefix --libdir=%_prefix/lib
@@ -32,10 +34,6 @@ rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 %find_lang %name
 ln -sf %_prefix/lib/ipod-sharp/* %buildroot%_prefix/lib/%name/
-desktop-file-install --vendor="" \
-  --remove-category="Application" \
-  --add-category="X-MandrivaLinux-Multimedia-Sound;Audio;Player" \
-  --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
