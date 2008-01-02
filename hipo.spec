@@ -10,6 +10,7 @@ Patch: hipo-0.5-desktopentry.patch
 License: GPL
 Group: Sound
 Url: http://www.gnome.org/~pvillavi/hipo/
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
 BuildRequires: desktop-file-utils
 BuildRequires: mono-devel
