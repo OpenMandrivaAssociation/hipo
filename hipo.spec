@@ -1,5 +1,5 @@
 %define name hipo
-%define version 0.6
+%define version 0.6.1
 %define release %mkrel 1
 Summary: GTK interface to iPod
 Name: %{name}
@@ -17,6 +17,7 @@ BuildRequires: mono-devel
 BuildRequires: gnome-sharp2
 BuildRequires: ipod-sharp
 BuildRequires: ndesk-dbus-glib
+BuildRequires: taglib-sharp
 BuildRequires: gnome-doc-utils
 BuildRequires: perl-XML-Parser
 
@@ -42,8 +43,6 @@ done
 
 
 ln -sf %_prefix/lib/ipod-sharp/* %buildroot%_prefix/lib/%name/
-#gw this still contains the obsolete libipoddevice
-rm -f %buildroot%_prefix/lib/%name/ipod-sharp.dll.config
 
 %clean
 rm -rf $RPM_BUILD_ROOT
