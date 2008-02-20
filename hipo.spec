@@ -1,5 +1,5 @@
 %define name hipo
-%define version 0.5
+%define version 0.6
 %define release %mkrel 1
 Summary: GTK interface to iPod
 Name: %{name}
@@ -16,6 +16,8 @@ BuildRequires: desktop-file-utils
 BuildRequires: mono-devel
 BuildRequires: gnome-sharp2
 BuildRequires: ipod-sharp
+BuildRequires: gnome-doc-utils
+BuildRequires: perl-XML-Parser
 
 %description
 Hipo is an application that allows you to manage the data of your iPod.
@@ -32,8 +34,15 @@ make
 %install
 rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
-%find_lang %name
+%find_lang %name --with-gnome
+for omf in %buildroot%_datadir/omf/*/*-??.omf;do
+echo "%lang($(basename $omf|sed -e s/.*-// -e s/.omf//)) $(echo $omf|sed s!%buildroot!!)" >> %name.lang
+done
+
+
 ln -sf %_prefix/lib/ipod-sharp/* %buildroot%_prefix/lib/%name/
+#gw this still contains the obsolete libipoddevice
+rm -f %buildroot%_prefix/lib/%name/ipod-sharp.dll.config
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -50,5 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 %_prefix/lib/%name
 %_datadir/applications/%name.desktop
 %_datadir/icons/hicolor/*/apps/*
+%dir %_datadir/omf/%name
+%_datadir/omf/%name/%name-C.omf
 
 
