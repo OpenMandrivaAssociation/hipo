@@ -1,12 +1,12 @@
 %define name hipo
 %define version 0.6.1
-%define release %mkrel 1
+%define release %mkrel 2
 Summary: GTK interface to iPod
 Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: http://download.gnome.org/sources/Hipo/%{name}-%{version}.tar.bz2
-Patch: hipo-0.5-desktopentry.patch
+Patch: hipo-0.6.1-desktopentry.patch
 License: GPL
 Group: Sound
 Url: http://www.gnome.org/~pvillavi/hipo/
@@ -27,7 +27,7 @@ Hipo is an application that allows you to manage the data of your iPod.
 
 %prep
 %setup -q -n %name-%version
-%patch -p1
+%patch -p1 -b .desktopentry
 
 %build
 ./configure --prefix=%_prefix --libdir=%_prefix/lib
@@ -49,8 +49,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 %update_icon_cache hicolor
+%update_desktop_database
+
 %postun
 %clean_icon_cache hicolor
+%clean_desktop_database
 
 %files -f %name.lang
 %defattr(-,root,root)
