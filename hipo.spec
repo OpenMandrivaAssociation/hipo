@@ -7,7 +7,7 @@ Version: %{version}
 Release: %{release}
 Source0: http://download.gnome.org/sources/Hipo/%{name}-%{version}.tar.bz2
 Patch: hipo-0.6.1-desktopentry.patch
-License: GPL
+License: GPLv2+ and GFDL
 Group: Sound
 Url: http://www.gnome.org/~pvillavi/hipo/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
