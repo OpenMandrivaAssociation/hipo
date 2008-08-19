@@ -14,7 +14,7 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
 BuildRequires: desktop-file-utils
 BuildRequires: mono-devel
-BuildRequires: gnome-sharp2
+BuildRequires: gnome-sharp2-devel
 BuildRequires: ipod-sharp
 BuildRequires: ndesk-dbus-glib
 BuildRequires: taglib-sharp
