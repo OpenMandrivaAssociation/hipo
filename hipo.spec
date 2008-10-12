@@ -7,6 +7,7 @@ Version: %{version}
 Release: %{release}
 Source0: http://download.gnome.org/sources/Hipo/%{name}-%{version}.tar.bz2
 Patch: hipo-0.6.1-desktopentry.patch
+Patch1: hipo-0.6.99-build.patch
 License: GPLv2+ and GFDL
 Group: Sound
 Url: http://www.gnome.org/~pvillavi/hipo/
@@ -28,6 +29,7 @@ Hipo is an application that allows you to manage the data of your iPod.
 %prep
 %setup -q -n %name-%version
 %patch -p1 -b .desktopentry
+%patch1 -p1
 
 %build
 ./configure --prefix=%_prefix --libdir=%_prefix/lib --sysconfdir=%_sysconfdir
