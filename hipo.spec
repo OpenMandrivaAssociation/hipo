@@ -1,6 +1,6 @@
 %define name hipo
 %define version 0.6.99
-%define release %mkrel 6
+%define release %mkrel 7
 Summary: GTK interface to iPod
 Name: %{name}
 Version: %{version}
