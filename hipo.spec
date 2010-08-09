@@ -17,7 +17,7 @@ BuildRequires: desktop-file-utils
 BuildRequires: mono-devel
 BuildRequires: gnome-sharp2-devel
 BuildRequires: ipod-sharp-devel
-BuildRequires: ndesk-dbus-glib
+BuildRequires: ndesk-dbus-glib-devel
 BuildRequires: taglib-sharp-devel
 BuildRequires: gnome-doc-utils
 BuildRequires: perl-XML-Parser
