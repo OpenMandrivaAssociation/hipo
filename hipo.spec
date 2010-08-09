@@ -16,7 +16,7 @@ BuildArch: noarch
 BuildRequires: desktop-file-utils
 BuildRequires: mono-devel
 BuildRequires: gnome-sharp2-devel
-BuildRequires: ipod-sharp
+BuildRequires: ipod-sharp-devel
 BuildRequires: ndesk-dbus-glib
 BuildRequires: taglib-sharp
 BuildRequires: gnome-doc-utils
@@ -49,17 +49,8 @@ ln -sf %_prefix/lib/ipod-sharp/* %buildroot%_prefix/lib/%name/
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-%update_icon_cache hicolor
-%update_desktop_database
-%post_install_gconf_schemas hipo
-
 %preun
 %preun_uninstall_gconf_schemas hipo
-
-%postun
-%clean_icon_cache hicolor
-%clean_desktop_database
 
 %files -f %name.lang
 %defattr(-,root,root)
