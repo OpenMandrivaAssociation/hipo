@@ -19,6 +19,7 @@ BuildRequires: gnome-sharp2-devel
 BuildRequires: ipod-sharp-devel
 BuildRequires: ndesk-dbus-glib-devel
 BuildRequires: taglib-sharp-devel
+BuildRequires: glib2-devel
 BuildRequires: gnome-doc-utils
 BuildRequires: perl-XML-Parser
 
