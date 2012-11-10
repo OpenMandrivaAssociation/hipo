@@ -1,0 +1,19 @@
+diff -p -up hipo-0.6.1/hipo.desktop.in.desktopentry hipo-0.6.1/hipo.desktop.in
+--- hipo-0.6.1/hipo.desktop.in.desktopentry	2008-02-20 21:27:33.000000000 +0100
++++ hipo-0.6.1/hipo.desktop.in	2008-03-06 09:15:43.000000000 +0100
+@@ -1,12 +1,11 @@
+ [Desktop Entry]
+ Version=1.0
+-Encoding=UTF-8
+ _Name=Hipo iPod Management Tool
+ _Comment=Add, Remove, Extract data from your iPod
+ Exec=hipo
+-Icon=gnome-dev-ipod.png
++Icon=gnome-dev-ipod
+ StartupNotify=true
+ Terminal=false
+ Type=Application
+-Categories=GNOME;AudioVideo;
+-MimeType=audio/x-mp3;audio/x-mpeg;audio/mpeg;
++Categories=GNOME;AudioVideo;Audio;
++MimeType=audio/x-mp3;audio/x-mpeg;audio/mpeg;x-content/audio-player;

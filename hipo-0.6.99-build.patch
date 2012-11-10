@@ -1,0 +1,59 @@
+diff -p -up hipo-0.6.99/src/DeviceSource.cs~ hipo-0.6.99/src/DeviceSource.cs
+--- hipo-0.6.99/src/DeviceSource.cs~	2008-04-01 21:48:36.000000000 +0200
++++ hipo-0.6.99/src/DeviceSource.cs	2008-10-12 22:33:00.000000000 +0200
+@@ -69,7 +69,7 @@ namespace Hipo
+ 			// menu creation
+ 			menu = new Menu();
+ 			
+-			MenuItem item = (MenuItem)(new Action ("RenameDevice",
++			MenuItem item = (MenuItem)(new Gtk.Action ("RenameDevice",
+ 			                                       Catalog.GetString ("Rename"),
+ 			                                       Catalog.GetString ("Rename the device"),
+ 			                                       Gtk.Stock.Copy)).CreateMenuItem ();
+diff -p -up hipo-0.6.99/src/PlaylistSource.cs~ hipo-0.6.99/src/PlaylistSource.cs
+--- hipo-0.6.99/src/PlaylistSource.cs~	2008-04-01 21:48:36.000000000 +0200
++++ hipo-0.6.99/src/PlaylistSource.cs	2008-10-12 22:33:27.000000000 +0200
+@@ -50,14 +50,14 @@ namespace Hipo
+ 			// menu creation
+ 			menu = new Menu();
+ 			
+-			MenuItem item = (MenuItem)(new Action ("RenamePlaylist",
++			MenuItem item = (MenuItem)(new Gtk.Action ("RenamePlaylist",
+ 			                                       Catalog.GetString ("Rename"),
+ 			                                       Catalog.GetString ("Rename the playlist"),
+ 			                                       Gtk.Stock.Copy)).CreateMenuItem ();
+ 			item.Activated += OnRename;
+ 			menu.Add (item);
+ 			
+-			item = (MenuItem)(new Action ("DeletePlaylist",
++			item = (MenuItem)(new Gtk.Action ("DeletePlaylist",
+ 			                              Catalog.GetString ("Delete"),
+ 			                              Catalog.GetString ("Delete the playlist"),
+ 			                              Gtk.Stock.Delete)).CreateMenuItem ();
+diff -p -up hipo-0.6.99/src/TracksContainer.cs~ hipo-0.6.99/src/TracksContainer.cs
+--- hipo-0.6.99/src/TracksContainer.cs~	2008-04-01 21:48:36.000000000 +0200
++++ hipo-0.6.99/src/TracksContainer.cs	2008-10-12 22:32:47.000000000 +0200
+@@ -97,20 +97,20 @@ namespace Hipo
+ 			// menu creation
+ 			menu = new Menu();
+ 			
+-			addToPlaylistItem = (MenuItem)(new Action ("AddToPlaylist",
++			addToPlaylistItem = (MenuItem)(new Gtk.Action ("AddToPlaylist",
+ 			                                           Catalog.GetString ("Add to Playlist..."),
+ 			                                           Catalog.GetString ("Add the track to a Playlist"),
+ 			                                           Gtk.Stock.Add)).CreateMenuItem ();
+ 			menu.Add (addToPlaylistItem);
+ 			
+-			MenuItem item = (MenuItem)(new Action ("RemoveTrack",
++			MenuItem item = (MenuItem)(new Gtk.Action ("RemoveTrack",
+ 			                                       Catalog.GetString ("Remove"),
+ 			                                       Catalog.GetString ("Remove the track from your iPod"),
+ 			                                       Gtk.Stock.Remove)).CreateMenuItem ();
+ 			item.Activated += OnRemove;
+ 			menu.Add (item);
+ 			
+-			item = (MenuItem)(new Action ("TrackProperties",
++			item = (MenuItem)(new Gtk.Action ("TrackProperties",
+ 			                              Catalog.GetString ("Track Properties"),
+ 			                              Catalog.GetString ("Track Properties"),
+ 			                              Gtk.Stock.Properties)).CreateMenuItem ();
