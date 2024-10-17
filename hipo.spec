@@ -10,7 +10,7 @@ Patch: hipo-0.6.1-desktopentry.patch
 Patch1: hipo-0.6.99-build.patch
 License: GPLv2+ and GFDL
 Group: Sound
-Url: http://www.gnome.org/~pvillavi/hipo/
+Url: https://www.gnome.org/~pvillavi/hipo/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
 BuildRequires: desktop-file-utils
